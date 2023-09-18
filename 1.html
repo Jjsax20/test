@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Database</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Enlace al archivo CSS externo -->
+    <style>
+        /* Estilo CSS para alinear el texto a la izquierda dentro de modal1 */
+        #modal1 .modal-content {
+            text-align: left;
+        }
+
+        /* Estilo CSS para el modal de dos columnas */
+        .modal-two-columns {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Estilo CSS para la columna izquierda */
+        .modal-left-column {
+            flex: 1;
+        }
+
+        /* Estilo CSS para la columna derecha */
+        .modal-right-column {
+            flex: 1;
+            text-align: right;
+            margin-left: auto; /* Mueve la columna derecha hacia el borde derecho */
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="tab-container">
+        <ul class="tab-menu">
+            <li onclick="openTab('sedes1to9')">Sedes 1/9</li>
+            <li onclick="openTab('sedes10to18')">Sedes 10/18</li>
+            <li onclick="openTab('soporte')">Soporte Técnico</li>
+        </ul>
+
+        <div id="sedes1to9" class="tab" style="text-align: left;">
+            <p>
+                <a href="javascript:void(0);" onclick="openModal('modal1')">Salta 1</a>
+            </p>
+            <!-- Agrega aquí las sedes 2 a 9 -->
+        </div>
+        <div id="sedes10to18" class="tab">
+            <!-- Agrega aquí las sedes 10 a 18 -->
+        </div>
+
+        <div id="soporte" class="tab">
+            <p>Información de Soporte Técnico</p>
+        </div>
+    </div>
+
+    <!-- Modal para las sedes -->
+    <div id="modal1" class="modal">
+        <div class="modal-content modal-two-columns">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <div class="modal-left-column">
+                <!-- Contenido del lado izquierdo -->
+                <h2>Ubicacion: Wynwoodpark, Naguanagua</h2>
+                <ul>
+                    <li>Gerente: Luisito</li>
+                    <li>Número de contacto del gerente: 04128474</li>
+                    <li>Sub-gerente: El pimpollo</li>
+                    <li>Número de contacto del sub-gerente: 0412958794</li>
+                </ul>
+                <!-- Horario -->
+                <p>
+                    <strong>Horario:</strong><br>
+                    De lunes a viernes de 8 am a 5 pm<br>
+                    Sábados y domingos: Cerrado
+                </p>
+            </div>
+            <div class="modal-right-column">
+                <!-- Contenido del lado derecho -->
+                <p>
+                    <br>
+                    <strong>Wifi:</strong><br>
+                    Usuario del router: admin<br>
+                    Clave del router: admin<br>
+                    Nombre del wifi: Salta-wifi<br>
+                    Clave del wifi: 1234567890987<br><br>
+
+                    <strong>Anydesk:</strong><br>
+                    ID de Servidor: 9876543212<br>
+                    Administrativo: 8478237845
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var tabs = document.getElementsByClassName("tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+        }
+
+        function openModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
